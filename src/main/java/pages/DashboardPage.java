@@ -39,11 +39,12 @@ return new TransactionHistoryPage(driver, test);
 	
 	
 	public DashboardPage clickToggleLink() throws InterruptedException{
+		Thread.sleep(2000);
 	clickByXpathExplict(prop.getProperty("clickmenu.toggle.button.xpath"));
-	Thread.sleep(5000);
+	Thread.sleep(4000);
 	//	clickBy(prop.getProperty("clickmenu.toggle.button.xpath"));
 
-	
+
 	return this;
 }
 	public DashboardPage clickProductMenu(){
