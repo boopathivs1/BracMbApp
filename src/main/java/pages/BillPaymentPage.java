@@ -1,5 +1,7 @@
 package pages;
 
+import java.time.Duration;
+
 import com.relevantcodes.extentreports.ExtentTest;
 
 import io.appium.java_client.android.AndroidDriver;
@@ -28,8 +30,10 @@ public class BillPaymentPage extends ProjectWrappers{
 	public BillPaymentPage clickbillersubModule(String Billername) throws InterruptedException{
 		
 		//	String name=regvalue(Billername);
-			clickByXpathExplict(".//span[text()='"+Billername+"']");
-						
+	clickByXpathExplict(".//span[text()='"+Billername+"']");
+		
+	//	pressByElement(".//span[text()='"+Billername+"']", "4");
+		
 			return this;
 		}	
 	
@@ -42,12 +46,41 @@ public class BillPaymentPage extends ProjectWrappers{
 	
 
 	
-	public BillPaymentPage selectBiller(String Mobno){
+	public BillPaymentPage selectBiller(String Mobno) throws InterruptedException{	
+		
+		
+		
+
+		clickByXpathExplict(prop.getProperty("click.addbillbuton.xpath"));
+		clickByXpathExplict(prop.getProperty("click.transhistorybackbutton.xpath"));
+		
+		
 		String Mobnumber=regvalue(Mobno);
 		clickByXpathExplict(".//span[text()='"+Mobnumber+"']");
-					
+			
+		
+
+
+		
+		
+	//	Thread.sleep(6000);			
+		
+	//	tapByElement(".//span[text()='"+Mobnumber+"']");
+	
+		
 		return this;
 	}	
+	
+	
+	public BillPaymentPage clickbackBiller(){	
+			
+	clickByXpathExplict(prop.getProperty("click.transhistorybackbutton.xpath"));
+	return this;
+	}	
+	
+	
+	
+	
 	
 	public BillPaymentPage clickInsurancebiller() throws InterruptedException{
 		clickByXpathExplict(prop.getProperty("click.insurancebiller.xpath"));

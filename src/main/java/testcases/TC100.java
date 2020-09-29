@@ -40,7 +40,18 @@ public class TC100 extends ProjectWrappers {
 	.clickToBiller()
 	.selectBiller(Mobno)
 	.fillbillerForm("Nextbutton", null)
-	.fillbillerForm("fromAccount", fromAcc)
+	
+	
+//	.clickbackBiller()
+//	.clickbillersubModule(Billername)
+//	.clickbillerNextbutton()
+//	.clickToBiller()
+//	.selectBiller(Mobno)
+//	
+//	
+//	
+//	.fillbillerForm("Nextbutton", null)
+.fillbillerForm("fromAccount", fromAcc)
 	.getAccountBalance()
 	.fillbillerForm("enteramount", amount)
 	.fillbillerForm("confirmbutton", null)

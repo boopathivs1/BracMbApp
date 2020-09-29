@@ -333,8 +333,12 @@ ContextHandlingNative();
 			capabilities.setCapability("deviceName", deviceName);
 			capabilities.setCapability("platformVersion",version);
 			capabilities.setCapability("udid",udid);
-//			capabilities.setCapability(MobileCapabilityType.FULL_RESET,false);
-		capabilities.setCapability(MobileCapabilityType.NO_RESET, false);
+			//capabilities.setCapability(MobileCapabilityType.FULL_RESET,true);
+			//capabilities.setCapability(MobileCapabilityType.,true);
+			
+			
+			
+		capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
 		capabilities.setCapability("appPackage", "com.brmb.mobilebanking");
 		capabilities.setCapability("appActivity", "com.brmb.mobilebanking.MainActivity");
 		/////	capabilities.setCapability("unicodeKeyboard", true);
@@ -1687,10 +1691,30 @@ System.out.println(e);
 
 	
 	  //Tap to an element for 250 milliseconds
-    public void tapByElement (AndroidElement e) {
+	
+    public void tapByElement (String xpaths) {
+    	
+    	WebDriverWait wait;
+    	try{	
+    Thread.sleep(2000);
+
+    wait = new WebDriverWait(driver,30);
+    WebElement ele=wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpaths)));
+
+    	
         new TouchAction(driver)
-                .tap(tapOptions().withElement(element(e)))
+                .tap(tapOptions().withElement(element(ele)))
                 .waitAction(waitOptions(Duration.ofMillis(250))).perform();
+
+    	reportStep("The element with xpath: is clicked.", "PASS");
+    }
+    
+    
+    catch (Exception eS) {
+    	reportStep("The element with xpath: is not clicked.", "FAIL");
+	}
+    
+    
     }
  
     //Tap by coordinates
@@ -1711,13 +1735,32 @@ reportStep("The element with xpath: is clicked.", "INFO", false);
     }
  
     //Press by element
-    public void pressByElement (AndroidElement element, long seconds) {
-        new TouchAction(driver)
-                .press(element(element))
+    public void pressByElement (String xpath, long seconds) {
+
+    	
+    	WebDriverWait wait;
+    	try{	
+    Thread.sleep(2000);
+
+    wait = new WebDriverWait(driver,30);
+    WebElement ele=wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+
+    	
+    	
+    	new TouchAction(driver)
+                .press(element(ele))
                 .waitAction(waitOptions(ofSeconds(seconds)))
                 .release()
                 .perform();
-    }
+    	reportStep("Element has clicked","PASS");
+    	}
+    	catch (Exception e) {
+        	reportStep("Element has not clicked","FAIL");
+		}
+    	
+    	
+    	
+    	}
  
     //Press by coordinates
     public void pressByCoordinates (int x, int y, long seconds) {
