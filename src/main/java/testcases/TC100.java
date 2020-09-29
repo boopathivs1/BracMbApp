@@ -57,6 +57,8 @@ public class TC100 extends ProjectWrappers {
 	.fillbillerForm("confirmbutton", null)
 	.singleScroll()
 	.fillbillerForm("confirmbutton", null)
+	.singleScroll()
+	.fillbillerForm("confirmbutton", null)
 	.EnterOtp(otp)
 	.submitAddBeneOtpconfirm()
 	.clickmenu()
