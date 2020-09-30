@@ -82,7 +82,11 @@ public static String BillDueAmount="";
 public static String webmode;
 	
 Dimension size;
-	public GenericWrappers() {
+public static String userName = "vayanaautomation1";
+public static String accessKey = "WGKy1waWi18dcYnPD8eC";
+	
+
+public GenericWrappers() {
 		Properties prop = new Properties();
 		try {
 			prop.load(new FileInputStream(new File("./src/main/resources/config.properties")));
@@ -332,7 +336,12 @@ ContextHandlingNative();
 			
 			capabilities.setCapability("deviceName", deviceName);
 			capabilities.setCapability("platformVersion",version);
+			
 			capabilities.setCapability("udid",udid);
+		//	capabilities.setCapability("autoWebview",true);
+			
+				
+			
 			//capabilities.setCapability(MobileCapabilityType.FULL_RESET,true);
 			//capabilities.setCapability(MobileCapabilityType.,true);
 			
@@ -356,6 +365,41 @@ ContextHandlingNative();
 		}
 	}
 
+	
+	
+	
+	
+	
+	public void launchAppBrowserStack(String deviceName,String version,String udid,String PortNumber ){
+		try {
+	
+	 DesiredCapabilities caps = new DesiredCapabilities();
+	   
+	    
+
+     caps.setCapability("device", deviceName);
+     caps.setCapability("os_version",version);
+     caps.setCapability("project", "My First Project");
+     caps.setCapability("build", "My First Build");
+     caps.setCapability("name", "BracApp");
+     caps.setCapability("app", "bs://0d022c4db90dd8eb7d3f30d0dc3097c1b940b857");
+
+
+     AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(new URL("https://"+userName+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub"), caps);
+
+	
+
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+	
+		
+	 reportStep("The Brac Appication has been launched successfully", "PASS");
+	} catch (Exception e) {
+		e.printStackTrace();
+	reportStep("The Brac Appication could not be launched", "FAIL");
+	}
+}
+	
+	
 	
 	
 	public void verifyTextContainsRegXpath(String xpath, String text){

@@ -133,7 +133,7 @@ ContextHandlingWeb();
              Thread.sleep(2000);
             
    tapByCoordinates(okx, oky);
-   Thread.sleep(2000);
+   Thread.sleep(3000);
              	 //         	clickByXpathNativeAction(prop.getProperty("click.date.okpopup.xpath"));
                int tx = Integer.parseInt(mttoX);
                int ty = Integer.parseInt(mttoY);

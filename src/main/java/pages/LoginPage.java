@@ -22,7 +22,7 @@ public class LoginPage extends ProjectWrappers {
 	public LoginPage getStartApp(String deviceName, String version, String udid, String PortNumber) {
 
 	launchApp(deviceName, version, udid, PortNumber);
-		
+//launchAppBrowserStack("Xiaomi Redmi Note 8","9.0", udid, PortNumber);		
 		return this;
 	}
 	
