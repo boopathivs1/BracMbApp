@@ -48,7 +48,7 @@ public class TC32 extends ProjectWrappers {
 	.clickPaynowbutton()
 	.singleScroll()
 	.clickConfirmbutton()
-	.clickSendMoneybutton()
+	.clickVerifyTransferbutton()
 	.EnterOtp(otp)
 	.ClickVerifybutton()
 	.clickmenu()

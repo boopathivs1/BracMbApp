@@ -29,8 +29,6 @@ public class TC102 extends ProjectWrappers {
 			.getStartApp(Devicename, versionName, udid, portnumber)
 			.LoginApp(username, password)
 	.clickToggleLink()
-	
-	
 	.clickBillandFeesLink()
 	. clickMobilebiller()
 	.clickbillerNextbutton()

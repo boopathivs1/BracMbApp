@@ -50,8 +50,8 @@ public class TC29 extends ProjectWrappers {
 .fillTransferForm("Remarks",Remarks)
 .doubleScroll()
 .fillTransferForm("confirmbutton",null)
-.EnterOtp(otp)
-.submitAddBeneOtpconfirm()
+//.EnterOtp(otp)
+//.submitAddBeneOtpconfirm()
 .singleScroll()
 .clickTransferbutton()
 

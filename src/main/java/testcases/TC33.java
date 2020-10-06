@@ -45,7 +45,7 @@ public class TC33 extends ProjectWrappers {
 	.singleScroll()
 	.singleScroll()
 	.clickConfirmbutton()
-	.clickSendMoneybutton()
+	.clickVerifyTransferbutton()
 	.EnterOtp(otp)
 	.ClickVerifybutton()
 	.clickmenu()

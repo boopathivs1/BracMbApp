@@ -44,7 +44,7 @@ public class TC34 extends ProjectWrappers{
 	.singleScroll()
 	.clickConfirmbutton()
 	.singleScroll()
-	.clickSendMoneybutton()
+	.clickVerifyTransferbutton()
 	.EnterOtp(otp)
 	.ClickVerifybutton()
 	.clickmenu()
