@@ -306,6 +306,15 @@ return this;
 	}
 	
 	
+	public TransfersPage clickVerifyTransferbutton(){
+
+		
+		clickByXpathExplict(prop.getProperty("click.Withinbank.transfer.button"));
+
+	return this;	
+		
+		}
+	
 	
 	
 	public TransfersPage clickTransferbutton(){

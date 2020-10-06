@@ -30,6 +30,26 @@
       <class name="testcases.TC67"/>
       <class name="testcases.TC68"/>
       <class name="testcases.TC69"/>
+      <class name="testcases.TC100"/>
+      <class name="testcases.TC101"/>
+      <class name="testcases.TC102"/>
+      <class name="testcases.TC103"/>
+      <class name="testcases.TC104"/>
+      <class name="testcases.TC105"/>
+      <class name="testcases.TC106"/>
+      <class name="testcases.TC107"/>
+      <class name="testcases.TC108"/>
+      <class name="testcases.TC109"/>
+      <class name="testcases.TC110"/>
+      <class name="testcases.TC111"/>
+      <class name="testcases.TC112"/>
+      <class name="testcases.TC113"/>
+      <class name="testcases.TC114"/>
+      <class name="testcases.TC115"/>
+      <class name="testcases.TC116"/>
+      <class name="testcases.TC117"/>
+      <class name="testcases.TC118"/>
+      <class name="testcases.TC119"/>
        </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

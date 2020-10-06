@@ -40,7 +40,7 @@ public class TC68  extends ProjectWrappers{
 .clickWalletToBeneBtn()
 .selectBeneficiary(selectBeneAccno)
 .clickWallettonextbtn()
-.singleScroll()
+
 .fillTransferForm("fromAcc",fromAcc)
 .getAccountBalance()
 .fillTransferForm("enteramount",amount)
