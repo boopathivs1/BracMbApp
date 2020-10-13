@@ -10,7 +10,11 @@
 			<artifactId>java-client</artifactId>
     <version>7.0.0</version>
     		</dependency>
-	
+	  <dependency>
+    <groupId>com.browserstack</groupId>
+    <artifactId>browserstack-local-java</artifactId>
+    <version>1.0.3</version>
+</dependency>
 <dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>

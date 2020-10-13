@@ -30,6 +30,9 @@ public class TC30 extends ProjectWrappers {
 		{
 			new LoginPage(driver, test)
 			.getStartApp(Devicename, versionName, udid, portnumber)
+			
+			//.getStartApp("Xiaomi Redmi Note 8","9.0", udid, portnumber)
+
 			.LoginApp(username, password)
 	.clickToggleLink()
 	

@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import com.relevantcodes.extentreports.ExtentTest;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidKeyCode;
 import wrappers.ProjectWrappers;
 
 public class LoginPage extends ProjectWrappers {
@@ -22,7 +23,7 @@ public class LoginPage extends ProjectWrappers {
 	public LoginPage getStartApp(String deviceName, String version, String udid, String PortNumber) {
 
 	launchApp(deviceName, version, udid, PortNumber);
-//launchAppBrowserStack("Xiaomi Redmi Note 8","9.0", udid, PortNumber);		
+//launchAppBrowserStack(deviceName, version, udid, PortNumber);		
 		return this;
 	}
 	
@@ -31,7 +32,10 @@ public class LoginPage extends ProjectWrappers {
 	public DashboardPage LoginApp(String username,String Password) throws InterruptedException{
 		ContextHandlingWeb();
 		System.out.println("Switching done");
+		
+		
 		enterByXpathExplict(prop.getProperty("enter.username.xpath"), username);
+		
 		enterByXpathExplict(prop.getProperty("enter.password.xpath"),Password);
 //		Thread.sleep(1000);
 		clickByXpathExplict(prop.getProperty("click.login.xpath"));

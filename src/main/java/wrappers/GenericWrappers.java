@@ -372,22 +372,24 @@ ContextHandlingNative();
 	
 	public void launchAppBrowserStack(String deviceName,String version,String udid,String PortNumber ){
 		try {
-	
-	 DesiredCapabilities caps = new DesiredCapabilities();
-	   
-	    
+			  DesiredCapabilities caps = new DesiredCapabilities();
+		      caps.setCapability("device", deviceName);
+		      caps.setCapability("os_version", version);
+		      caps.setCapability("project", "My First Project");
+		      caps.setCapability("build", "My First Build");
+		      caps.setCapability("browserstack.debug", "true");
+		      caps.setCapability("browserstack.appium_version", "1.18.0");
 
-     caps.setCapability("device", deviceName);
-     caps.setCapability("os_version",version);
-     caps.setCapability("project", "My First Project");
-     caps.setCapability("build", "My First Build");
-     caps.setCapability("name", "BracApp");
-     caps.setCapability("app", "bs://0d022c4db90dd8eb7d3f30d0dc3097c1b940b857");
+		      caps.setCapability("name", "Bstack-[Java] Sample Test");
+		      caps.setCapability("app", "bs://0d022c4db90dd8eb7d3f30d0dc3097c1b940b857");
 
+		      caps.setCapability("Connect Hardware Keyboard", true);
 
-     AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(new URL("https://"+userName+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub"), caps);
+		     driver = new AndroidDriver<WebElement>(new URL("https://"+userName+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub"), caps);
 
-	
+			
+			
+
 
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	
@@ -708,28 +710,6 @@ Thread.sleep(5000);
 
 
 
-public  static void Waitfor_Seconds()
-{
-    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-}
-
-
-public static boolean waitForElement( int timeLimitInSeconds, MobileElement element){
-
-    Boolean IsElementPresent = false;
-    try{
-
-        WebDriverWait wait = new WebDriverWait(driver, timeLimitInSeconds);
-       
-        wait.until(ExpectedConditions.visibilityOf(element));
-        IsElementPresent = element.isDisplayed();
-        IsElementPresent = true;
-    }catch(Exception e) {
-        IsElementPresent = false;
-        System.out.println(e.getMessage());
-    }
-    return IsElementPresent;
-}
 
 public void clickByXpathExplict(String xpathVal) {
 	

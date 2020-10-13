@@ -37,6 +37,8 @@ public class BrowserStack  {
 	      caps.setCapability("os_version", "9.0");
 	      caps.setCapability("project", "My First Project");
 	      caps.setCapability("build", "My First Build");
+	      caps.setCapability("browserstack.debug", "true");
+
 	      caps.setCapability("name", "Bstack-[Java] Sample Test");
 	      caps.setCapability("app", "bs://0d022c4db90dd8eb7d3f30d0dc3097c1b940b857");
 
